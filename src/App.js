@@ -5,10 +5,10 @@ import * as Yup from "yup";
 function Checkbox ({label, ...props}) {
   const [field, meta, helper] = useField(props);
   const { value } = meta;
-  const { setValue } = helper;
+  const { setValue } = helper;//设置值
   const handleChange = () => {
     const set = new Set(value);
-    if (set.has(props.value)) {
+    if (set.has(props.value)) {// props.value用户选择的值
       set.delete(props.value);
     }else {
       set.add(props.value);
